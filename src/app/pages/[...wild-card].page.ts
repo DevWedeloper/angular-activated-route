@@ -18,7 +18,7 @@ import { ActivatedRoute } from '@angular/router';
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class WildCardComponent {
+export default class WildCardPageComponent {
   private route = signal<ActivatedRoute>(inject(ActivatedRoute));
   private route$ = toObservable(this.route);
   protected url = computed(() => {

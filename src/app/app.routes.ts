@@ -1,9 +1,9 @@
+import { createRoutes } from '@analogjs/router';
 import { Routes } from '@angular/router';
 
-export const routes: Routes = [
-  {
-    path: '**',
-    loadComponent: () =>
-      import('./wild-card.component').then((m) => m.WildCardComponent),
-  },
-];
+const pages = {
+  '/src/app/pages/[...wild-card].page.ts': () =>
+    import('./pages/[...wild-card].page'),
+};
+
+export const routes: Routes = createRoutes(pages);
